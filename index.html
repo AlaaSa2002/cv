@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alaa Saleh Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body { background: #020617; color: #e5e7eb; font-family: 'Poppins', sans-serif; transition: all 0.3s ease; }
+html { scroll-behavior: smooth; }
+nav { position: fixed; top: 0; width: 100%; background: rgba(2,6,23,0.8); backdrop-filter: blur(10px); z-index: 1000; transition: all 0.3s ease; }
+nav .container { max-width: 1100px; margin: auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: 700; color: #38bdf8; }
+.menu { display: flex; gap: 25px; list-style: none; }
+.menu a { color: inherit; transition: 0.3s; }
+.menu a:hover { color: #38bdf8; }
+.hamburger { display: none; font-size: 1.5rem; cursor: pointer; }
+header { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 20px 60px; transition: all 0.3s ease; }
+header h1 { font-size: 3rem; }
+header span { color: #38bdf8; }
+header p { margin-top: 15px; font-size: 1.2rem; color: #94a3b8; }
+.hero-buttons { margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.btn { padding: 14px 30px; border-radius: 999px; font-weight: 600; transition: all 0.3s ease; }
+.btn.primary { background: #38bdf8; color: #020617; }
+.btn.primary:hover { background: #0ea5e9; transform: translateY(-2px); }
+.btn.secondary { border: 2px solid #38bdf8; color: #38bdf8; }
+.btn.secondary:hover { background: #38bdf8; color: #020617; transform: translateY(-2px); }
+section { padding: 100px 20px; max-width: 1100px; margin: auto; transition: all 0.3s ease; }
+section h2 { text-align: center; font-size: 2.2rem; margin-bottom: 40px; position: relative; }
+section h2::after { content: ''; width: 60px; height: 4px; background: #38bdf8; display: block; margin: 15px auto 0; border-radius: 2px; }
+.about p { max-width: 800px; margin: auto; text-align: center; color: #cbd5f5; line-height: 1.8; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.skill { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; opacity: 0; transform: translateY(50px); display: flex; justify-content: space-between; align-items: center; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.project { background: rgba(255,255,255,0.05); border-radius: 16px; overflow: hidden; opacity: 0; transform: translateY(50px); }
+.project img { width: 100%; height: 180px; object-fit: cover; }
+.project-content { padding: 20px; }
+.project h3 { color: #38bdf8; margin-bottom: 10px; }
+.tags span { background: rgba(56,189,248,0.15); padding: 4px 10px; border-radius: 999px; font-size: 0.8rem; margin-right: 5px; }
+.project-links { margin-top: 15px; display: flex; gap: 15px; }
+.project-links a { color: #38bdf8; font-weight: 500; }
+.timeline { border-left: 2px solid #38bdf8; padding-left: 30px; max-width: 700px; margin: auto; }
+.event { margin-bottom: 30px; opacity: 0; transform: translateY(50px); }
+.event h4 { color: #38bdf8; }
+.contact-icons { display: flex; justify-content: center; gap: 25px; margin-bottom: 30px; font-size: 1.5rem; }
+.contact-icons a { color: #38bdf8; }
+.contact form { max-width: 600px; margin: auto; }
+.contact input, .contact textarea { width: 100%; padding: 14px; margin-bottom: 15px; border-radius: 10px; border: none; background: rgba(255,255,255,0.08); color: #fff; }
+.contact button { width: 100%; padding: 14px; border-radius: 10px; border: none; background: #38bdf8; font-weight: 600; cursor: pointer; }
+footer { text-align: center; padding: 30px; color: #64748b; }
+@media(max-width:768px){.menu{display:none;flex-direction:column;background:#020617;width:100%;}.menu.show{display:flex;}.hamburger{display:block;}}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<div class="logo">Portfolio</div>
+<i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+<ul class="menu" id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<!--<li><a href="#timeline">Experience</a></li>-->
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+<header id="home">
+<div>
+<h1>Hi, I'm <span>Alaa Saleh</span></h1>
+<p id="typing"></p>
+<div class="hero-buttons">
+<a href="#projects" class="btn primary">View Projects</a>
+<a href="Alaa Cv co.pdf" class="btn secondary" download>Download CV</a>
+</div>
+</div>
+</header>
+<section id="about" class="about">
+<h2>About Me</h2>
+<p>Software Engineering graduate with a strong background in Full Stack web development, software and game development, and manual quality assurance testing. Experienced in designing, implementing, and publishing programming projects online. Proficient in Java, Kotlin, C#, Python, and SQL, with solid skills in writing SQL queries and using tools such as Jira and Postman for software testing. Highly motivated to further develop technical skills and contribute to impactful and high-quality software projects.</p>
+</section>
+<section id="skills">
+<h2>Programming Languages</h2>
+<div class="skills-grid">
+<div class="skill">HTML </div>
+<div class="skill">CSS </div>
+<div class="skill">JavaScript </div>
+<div class="skill">Kotlin </div>
+<div class="skill">PHP </div>
+<div class="skill">JAVA </div>
+<div class="skill">C# </div>
+<div class="skill">SQL </div>
+<div class="skill"> Python</div>
+<div class="skill">Lua </div>
+</div>
+
+<h2>Testing tools</h2>
+<div class="skills-grid">
+<div class="skill">Postman + Fiddler  (API testing) </div>
+<div class="skill">Ghost Inspector (Automation testing) </div>
+<div class="skill"> JMeter (performance &
+load testing) </div>
+
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="projects-grid">
+<div class="project">
+<img src="Screenshot 2026-02-08 201535.png" />
+<div class="project-content">
+<h3>Do Not Give Up: An initiative to curb drug usage among youths (URG PROJECT)</h3>
+<p>an interactive game aimed at raising awareness about drug misuse, its consequences, and available rehabilitation resources.</p>
+<div class="tags"><span>Unity</span><span>C#</span></div>
+<div class="project-links">
+<a href="Dont Give Up- project 1.zip">Download</a>
+</div>
+</div>
+</div>
+<div class="project">
+<img src="Screenshot 2026-02-08 202510.png" />
+<div class="project-content">
+<h3>Virus adventure a journey inside human body (graduate projects)</h3>
+<p>The game is about learning about the immune system and viruses that attack them. Currently, we notice that some children do not know about their immune system and how it works, nor do they know how to behave if they are infected with a virus while they are far from their parents. We have also seen that children prefer to play electronic games instead of browsing about the diseases or viruses that exist in our world or about how their bodies work. Therefore, an educational and interactive game must be designed for children so that they can play and learn at the same time.</p>
+<div class="tags"><span>Unity</span><span>C#</span></div>
+<div class="project-links">
+<a href="Virus.zip">Download</a>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+<!--- <section id="timeline">
+<h2>Experience</h2>
+<div class="timeline">
+<div class="event">
+<h4>Quality Assurance Tester</h4>
+<p>
+The Hope International Edu</p>
+</div>
+
+</div>
+</section> -->
+<section id="contact" class="contact">
+<h2>Contact Me</h2>
+<div class="contact-icons">
+<!--<a href="#"><i class="fab fa-github"></i></a>-->
+<a href="https://www.linkedin.com/in/alaa-saleh-7a3b09234
+" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="mailto:alaasadeq2002@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
+<!--<form id="contactForm">
+<input type="text" placeholder="Your Name" required />
+<input type="email" placeholder="Your Email" required />
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send</button>
+</form>-->
+</section>
+<footer>© 2026 Alaa Saleh</footer>
+<script>
+const text = "Software Engineer • QA/QC Engineer • Web Developer • Game Developer";
+let i = 0;
+function type(){if(i<text.length){document.getElementById("typing").innerHTML+=text.charAt(i);i++;setTimeout(type,80);} }
+type();
+function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
+function animateOnScroll(){
+  const elements = document.querySelectorAll('.skill, .project, .event');
+  const windowBottom = window.innerHeight;
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < windowBottom - 50){
+      el.style.opacity='1';
+      el.style.transform='translateY(0)';
+      el.style.transition='all 0.6s ease-out';
+    }
+  });
+}
+window.addEventListener('scroll', animateOnScroll);
+animateOnScroll();
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('This is a placeholder for EmailJS integration.');
+});
+</script>
+
+</body>
+</html>
